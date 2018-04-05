@@ -5,13 +5,18 @@
 ## Build Setup
 
 ``` bash
-# install dependencies
+# clone项目
+git clone git@github.com:luoxufang/elementSy.git
+
+# 安装依赖（）
 npm install
 
-# serve with hot reload at localhost:8080
+# 项目跑起来
 npm run dev
 
-# build for production with minification
+# 浏览器打开 localhost:8080
+
+# 打包的时候
 npm run build
 
 # build for production and view the bundle analyzer report
