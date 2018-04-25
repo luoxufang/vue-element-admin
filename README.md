@@ -6,7 +6,7 @@
 
 ``` bash
 # clone项目
-git clone git@github.com:luoxufang/elementSy.git
+git@github.com:luoxufang/vue-element-admin.git
 
 # 安装依赖（）
 npm install
