@@ -7,7 +7,7 @@ const vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
+//关闭 eslint 遍码规范验证
 // const createLintingRule = () => ({
 //   test: /\.(js|vue)$/,
 //   loader: 'eslint-loader',

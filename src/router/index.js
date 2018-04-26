@@ -13,6 +13,10 @@ export default new Router({
     {
       path: '/',
       component: resolve => require(['../components/HelloWorld.vue'], resolve)
+    },
+    {
+        path: '/login',
+        component: resolve => require(['../components/page/Login.vue'], resolve)
     }
   ]
 })
@@ -30,6 +34,6 @@ export default new Router({
 //       name: 'newsPage',
 //       component: newsPage
 //     }
-// ]
+// ] 
 
 // export default routes;
