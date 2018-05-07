@@ -30,17 +30,10 @@
                         {{username}} <i class="el-icon-caret-bottom"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-<<<<<<< HEAD
                         <a href="https://github.com/luoxufang/vue-element-admin" target="_blank">
                             <el-dropdown-item>关于作者</el-dropdown-item>
                         </a>
                         <a href="https://github.com/luoxufang/vue-element-admin" target="_blank">
-=======
-                        <a href="" target="_blank">
-                            <el-dropdown-item>关于作者</el-dropdown-item>
-                        </a>
-                        <a href="" target="_blank">
->>>>>>> aaa35a3c939d75ed2cae55ff29fccd51814c7101
                             <el-dropdown-item>项目仓库</el-dropdown-item>
                         </a>
                         <el-dropdown-item divided  command="loginout">退出登录</el-dropdown-item>
