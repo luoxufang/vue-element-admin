@@ -1,110 +1,60 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-// import { resolve } from 'dns';
+import Home from '../components/common/Home.vue'
+import Dashboard from '../components/page/Dashboard.vue'
+import BaseTable from '../components/page/BaseTable.vue'
+import Tabs from '../components/page/Tabs.vue'
+import BaseForm from '../components/page/BaseForm.vue'
+import VueEditor from '../components/page/VueEditor.vue'
+import Markdown from '../components/page/Markdown.vue'
+import Upload from '../components/page/Upload.vue'
+import BaseCharts from '../components/page/BaseCharts.vue'
+import DragList from '../components/page/DragList.vue'
+import Permission from '../components/page/Permission.vue'
 
-Vue.use(Router)
+import Login from '../views/Login.vue'
+import errorFourPage from '../components/page/404.vue'
+import errorThreePage from '../components/page/403.vue'
 
-export default new Router({
-  routes: [
+let routes = [
     {
-      path:'/',
-      redirect:'/dashboard'//重定向
+        path:'/',
+        redirect:'/dashboard'//重定向
     },
     {
       path: '/',
-      component: resolve => require(['../components/common/Home.vue'], resolve),
-      meta: { title: '介绍文件' },
-      children:[
-        {
-          path: '/dashboard',
-          component: resolve => require(['../components/page/Dashboard.vue'],resolve),
-          meta: { title: '系统首页' }
-        },
-        {
-            path: '/table',
-            component: resolve => require(['../components/page/BaseTable.vue'], resolve),
-            meta: { title: '基础表格' }
-        },
-        {
-            path: '/tabs',
-            component: resolve => require(['../components/page/Tabs.vue'], resolve),
-            meta: { title: 'tab选项卡' }
-        },
-        {
-            path: '/form',
-            component: resolve => require(['../components/page/BaseForm.vue'], resolve),
-            meta: { title: '基本表单' }
-        },
-        {
-            // 富文本编辑器组件
-            path: '/editor',
-            component: resolve => require(['../components/page/VueEditor.vue'], resolve),
-            meta: { title: '富文本编辑器' }
-        },
-        {
-            // markdown组件
-            path: '/markdown',
-            component: resolve => require(['../components/page/Markdown.vue'], resolve),
-            meta: { title: 'markdown编辑器' }    
-        },
-        {
-            // 图片上传组件
-            path: '/upload',
-            component: resolve => require(['../components/page/Upload.vue'], resolve),
-            meta: { title: '文件上传' }   
-        },
-        {
-            // vue-schart组件
-            path: '/charts',
-            component: resolve => require(['../components/page/BaseCharts.vue'], resolve),
-            meta: { title: 'schart图表' }
-        },
-        {
-            // 拖拽列表组件
-            path: '/drag',
-            component: resolve => require(['../components/page/DragList.vue'], resolve),
-            meta: { title: '拖拽列表' }
-        },
-        {
-            // 权限页面
-            path: '/permission',
-            component: resolve => require(['../components/page/Permission.vue'], resolve),
-            meta: { title: '权限测试', permission: true }
-        }
+      name: 'Home(默认页面)',
+      component: Home,
+      children: [
+        { path: '/Dashboard', component: Dashboard, name: '系统首页',meta: { title: '系统首页' }},      
+        { path: '/table', component: BaseTable, name: '基础表格',meta: { title: '基础表格' }},
+        { path: '/tabs', component: Tabs, name: 'tab选项卡',meta: { title: 'tab选项卡' }},
+        { path: '/form', component: BaseForm, name: '基本表单',meta: { title: '基本表单' }},  
+        { path: '/editor', component: VueEditor, name: '富文本编辑器',meta: { title: '富文本编辑器' }},      
+        { path: '/markdown', component: Markdown, name: 'markdown编辑器',meta: { title: 'markdown编辑器' }},  
+        { path: '/upload', component: Upload, name: '文件上传',meta: { title: '文件上传' }},  
+        { path: '/charts', component: BaseCharts, name: 'schart图表',meta: { title: 'schart图表' }},  
+        { path: '/drag', component: DragList, name: '拖拽列表',meta: { title: '拖拽列表' }}, 
+        { path: '/permission', component: Permission, name: '权限测试',meta: { title: '权限测试' }},
       ]
     },
     {
-        path: '/login',
-        component: resolve => require(['../components/page/Login.vue'], resolve)
+      path: '/Login',
+      name: 'Login',
+      component: Login
     },
     {
-        path: '/404',
-        component: resolve => require(['../components/page/404.vue'], resolve)
+      path: '/404',
+      name: 'errorFourPage',
+      component: errorThreePage
     },
     {
-        path: '/403',
-        component: resolve => require(['../components/page/403.vue'], resolve)
+      path: '/403',
+      name: 'errorThreePage',
+      component: errorThreePage
     },
     {
         path: '*',
         redirect: '/404'
     }
-  ]
-})
+] 
 
-// import HelloWorld from './components/HelloWorld.vue'
-// import newsPage from './views/newsPage.vue'
-// let routes = [
-//     {
-//       path: '/',
-//       name: 'HelloWorld(默认页面)',
-//       component: HelloWorld
-//     },
-//     {
-//       path: '/newsPage',
-//       name: 'newsPage',
-//       component: newsPage
-//     }
-// ] 
-
-// export default routes;
+export default routes;
