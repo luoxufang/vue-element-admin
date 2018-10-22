@@ -87,6 +87,11 @@
                         icon: 'el-icon-error',
                         index: '404',
                         title: '404页面'
+                    },
+                    {
+                        icon: 'el-icon-refresh',
+                        index: 'testPage',
+                        title: '测试页面'
                     }
                 ]
             }

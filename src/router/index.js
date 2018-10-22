@@ -13,6 +13,7 @@ import Permission from '../components/page/Permission.vue'
 import Login from '../views/Login.vue'
 import errorFourPage from '../components/page/404.vue'
 import errorThreePage from '../components/page/403.vue'
+import TestPage from '../components/HelloWorld.vue'
 
 let routes = [
     {
@@ -34,6 +35,7 @@ let routes = [
         { path: '/charts', component: BaseCharts, name: 'schart图表',meta: { title: 'schart图表' }},  
         { path: '/drag', component: DragList, name: '拖拽列表',meta: { title: '拖拽列表' }}, 
         { path: '/permission', component: Permission, name: '权限测试',meta: { title: '权限测试' }},
+        { path: '/testPage', component: TestPage, name: '测试页面',meta: { title: '测试页面' }},
       ]
     },
     {

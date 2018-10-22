@@ -9,6 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import "babel-polyfill";
 
 import VueRouter from 'vue-router'
+import componentB from './components/page/component1.vue'
 
 Vue.use(ElementUI,{ size: 'small' });
 Vue.use(VueRouter)
@@ -50,6 +51,9 @@ router.beforeEach((to, from, next) => {
 //     next()
 //   }
 // })
+
+//创建全局组件 在父组件直接引用(测试)
+// Vue.component('button-counter', componentB)
 
 new Vue({
   router,
